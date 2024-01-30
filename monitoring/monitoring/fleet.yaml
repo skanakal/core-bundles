@@ -6,16 +6,16 @@ helm:
   chart: rancher-monitoring
   version: 102.0.1+up40.1.2
   values:
-#    rke2ControllerManager:
-#      enabled: true
-#    rke2Etcd:
-#      enabled: true
-#    rke2IngressNginx:
-#      enabled: true
-#    rke2Proxy:
-#     enabled: true
-#   rke2Scheduler:
-#      enabled: true
+    rke2ControllerManager:
+      enabled: true
+    rke2Etcd:
+      enabled: true#
+    rke2IngressNginx:
+      enabled: true
+    rke2Proxy:
+      enabled: true
+    rke2Scheduler:
+      enabled: true
     grafana:
       alertmanager:
         alertmanagerSpec:
@@ -23,8 +23,8 @@ helm:
           useExistingSecret: true
     global:
       cattle:
- #       clusterId: local
- #       clusterName: local
+        clusterId: local
+        clusterName: local
         rkePathPrefix: ""
         rkeWindowsPathPrefix: ""
         systemDefaultRegistry: ""
