@@ -4,7 +4,7 @@ helm:
   releaseName: rancher-monitoring
   repo: https://charts.rancher.io
   chart: rancher-monitoring
-  version: 102.0.1+up40.1.2
+  version: 102.0.2+up40.1.2
   values:
     rke2ControllerManager:
       enabled: true
@@ -23,13 +23,13 @@ helm:
           useExistingSecret: true
     global:
       cattle:
-        clusterId: local
-        clusterName: local
+        clusterId: global.fleet.clusterLabels.management.cattle.io/cluster-name
+        clusterName: global.fleet.clusterLabels.management.cattle.io/cluster-display-name
         rkePathPrefix: ""
         rkeWindowsPathPrefix: ""
         systemDefaultRegistry: ""
-        systemProjectId: p-vqm9n
-        url: https://master-0
+        systemProjectId: ""
+        url: ""
         systemDefaultRegistry: ""    
     additionalDataSources:
       - name: "loki"
